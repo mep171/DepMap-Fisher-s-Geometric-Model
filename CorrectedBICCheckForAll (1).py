@@ -3,7 +3,7 @@ import glob
 import numpy as np
 import pandas as pd
 import jax
-jax.config.update("jax_enable_x64", True)  # <--- ADD THIS LINE FIRST
+jax.config.update("jax_enable_x64", True) 
 import jax.numpy as jnp
 from jax import random
 import jaxopt
@@ -12,7 +12,7 @@ import jaxopt
 MAX_REGRESS_ITER = 50000
 NUM_SEEDS = 200            # Number of random restarts per dimension D
 BASE_SEED = 102
-L2_LAMBDA = 1e-4           # Consistent L2 regularization weight
+L2_LAMBDA = 1e-4           
 D_GUESS_VALUES = [1, 2, 3, 4, 5]
 GUESS_X = 1.0
 
@@ -187,8 +187,8 @@ def process_single_file(file_path):
     try:
         df = pd.read_csv(file_path, index_col=0)
         
-        # --- Robust Formatting & Data Cleaning ---
-        # 1. Force convert non-numeric/string values to NaN
+        
+        
         df = df.apply(pd.to_numeric, errors='coerce')
         
         # 2. Drop rows (cell lines) or cols (genes) that are completely empty
